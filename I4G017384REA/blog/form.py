@@ -1,4 +1,3 @@
-from dataclasses import fields
 from django import forms
 from .models import Post
 
@@ -7,5 +6,5 @@ class PostForm(forms.ModelForm):
     class Meta:
         model= Post
         fields=[
-"title","slug", "author"
-        ]
+"title","slug", "author", "body", "publish","created","updated","status"
+]

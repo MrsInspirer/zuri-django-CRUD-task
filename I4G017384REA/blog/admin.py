@@ -1,15 +1,6 @@
 from django.contrib import admin
-from .models import Post
-from .models import title
-from .models import slug
-from .models import author
-from .models import body
-from .models import publish
-from .models import created
-from .models import updated
-from .models import status
 
-# Register your models here.
+from .models import status, updated, created, publish, body, author, slug, title,Post, 
 
 admin.site.register(Post)
 admin.site.register(title)

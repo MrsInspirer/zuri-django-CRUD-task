@@ -4,6 +4,10 @@ from django.utils import timezone
 from django.urls import reverse
 from django.template.defaultfilters import slugify
 
+from .models import Blog
+
+
+
 # Create your models here.
 
 

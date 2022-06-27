@@ -1,21 +1,10 @@
-from django.shortcuts import render
-from django.views.generic.list import PostListView
-
-from django.views.generic.Create import  CreateView
-
-from django.views.generic.Update import  UpdatedView
-from django.views.generic.Delete import  DeleteView
-from django.views.generic.create import  CreateView
-from django.views.generic.create import  CreateView
-from django.views.generic.create import  CreateView
-from django.views.generic.create import  CreateView
-from django.views.generic.create import  CreateView
+from django.views.generic.edit import CreateView
 
 from .models import Post
 
 # Create your views here.
 
-class Blog(models.Model):
+class PostCreateView(CreateView):
     model=Post
-
-
+    fields= ['title','slug','author','body','publish','created','updated','status',]
+    template_name=["base.html","post_confirm_delete.html","post_details.html","post_forms.html","post_list.html",]

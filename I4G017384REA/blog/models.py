@@ -4,20 +4,17 @@ from django.utils import timezone
 from django.urls import reverse
 from django.template.defaultfilters import slugify
 
-from .models import Blog
-
-
 
 # Create your models here.
 
 
 class Post(models.Model):
+
     STATUS_CHOICES = (
         ("draft", "Draft"),
         ("published", "Published")
   )
-
-    # DB Fields
+  # DB Fields
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=300, unique=True, editable=False)
     author = models.ForeignKey(
@@ -38,11 +35,10 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
-        pass 
-
+        super().save(*args, **kwargs) 
+        pass
     def __str__(self):
         return self.title
-    
-    def get_absolute_url(self):
-        return reverse("blog:post_detail", kwargs={"slug": self.slug})    
+        
+        def get_absolute_url(self):
+            return reverse("blog:post_detail", kwargs={"slug": self.slug})    

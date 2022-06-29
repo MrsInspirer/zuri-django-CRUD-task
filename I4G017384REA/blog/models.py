@@ -37,6 +37,7 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs) 
         pass
+
     def __str__(self):
         return self.title
         

@@ -6,5 +6,12 @@ class PostForm(forms.ModelForm):
     class Meta:
         model= Post
         fields=[
-"title","slug", "author", "body", "publish","created","updated","status"
+"title",
+"slug",
+ "author", 
+ "body", 
+ "publish",
+ "created",
+ "updated",
+ "status"
 ]
